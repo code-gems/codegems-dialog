@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
 	context: __dirname,
-	entry: ["./demo/index.js", "./dist/codegems-dialog.js"],
+	entry: ["./demo/index.js", "./dist/codegems-dialog.js", "./dist/codegems-dialog-overlay.js"],
 	devtool: "inline-source-map",
 	mode: "development",
 	module: {

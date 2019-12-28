@@ -1,17 +1,26 @@
 import { customElement, html, LitElement, property } from "lit-element";
 
 // styles
-import { dialogStyle } from "./styles/styles";
+import { dialogOverlayStyle } from "./styles/styles";
 
 @customElement("codegems-dialog-overlay")
 export class CodegemsDialogOverlayElement extends LitElement {
-	static styles = dialogStyle;
+	@property()
+	xxx: any;
+
+	static styles = dialogOverlayStyle;
 
 	render() {
 		return html`
-			<div class="wrapper">
-				<slot></slot>
-			</div>
+			<div class="wrapper"></div>
 		`;
+	}
+
+	firstUpdated() {
+		const template = this.querySelector("template");
+		console.log("%c template", "font-size: 24px; color: green;", template);
+		console.log("xxx", this.xxx);
+
+		document.body.appendChild(template.content);
 	}
 }

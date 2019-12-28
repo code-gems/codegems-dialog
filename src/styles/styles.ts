@@ -5,3 +5,14 @@ export const dialogStyle = css`
 		background-color: red;
 	}
 `;
+
+export const dialogOverlayStyle = css`
+	:host {
+		display: none;
+		background-color: blue;
+	}
+
+	:host(.show) {
+		display: block;
+	}
+`;
