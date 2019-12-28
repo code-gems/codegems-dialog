@@ -1,0 +1,40 @@
+{
+	"name": "codegems-dialog",
+	"version": "1.0.0",
+	"description": "Dialog window",
+	"main": "dist/codegems-dialog.js",
+	"scripts": {
+		"start": "tsc && concurrently \"tsc -w\" \"webpack-dev-server\"",
+		"compile": "tslint && tsc",
+		"dev": "tsc -w | webpack-dev-server"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/code-gems/codegems-dialog.git"
+	},
+	"keywords": [
+		"dialog",
+		"lit-element",
+		"lit-html",
+		"web component"
+	],
+	"author": "code-gems.com",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/code-gems/codegems-dialog/issues"
+	},
+	"homepage": "https://github.com/code-gems/codegems-dialog#readme",
+	"dependencies": {
+		"lit-element": "^2.2.1",
+		"lit-html": "^1.1.2"
+	},
+	"devDependencies": {
+		"ts-loader": "^6.2.1",
+		"typescript": "^3.4.3",
+		"tslint": "5.20.1",
+		"webpack": "^4.41.2",
+		"webpack-cli": "^3.3.10",
+		"webpack-dev-server": "^3.9.0",
+		"concurrently": "^5.0.2"
+	}
+}
