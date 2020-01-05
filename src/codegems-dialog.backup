@@ -1,0 +1,101 @@
+// import { customElement, html, LitElement, property } from 'lit-element';
+
+// styles
+// import { dialogStyle } from './styles/styles';
+
+// @customElement("codegems-dialog")
+export class CodegemsDialogElement extends HTMLElement {
+	// @property()
+	// config: any;
+	// @property()
+	// opened: boolean;
+
+	// opened: boolean;
+	// state: any;
+
+	// static styles = dialogStyle;
+
+	constructor() {
+		super();
+		// customElements.whenDefined('codegems-dialog').then(() => {
+		// 	this.firstUpdated();
+		// });
+
+		// let handler = {
+		// 	set: function(obj: any, prop: string, value: any) {
+		// 		console.log(
+		// 			'%c [DIALOG] PROXY',
+		// 			'font-size: 24px; color: green;',
+		// 			obj,
+		// 			prop,
+		// 			value
+		// 		);
+		// 		return true;
+		// 	},
+		// };
+		// // this.state = new Proxy((<any>this).__proto__, handler);
+		// this.state = new Proxy(this, handler);
+	}
+
+	// firstUpdated() {
+	// 	console.log('%c [DIALOG] firstUpdated', 'font-size: 24px; color: green;');
+	// }
+
+	// get xxx() {
+	// 	return this.hasAttribute('xxx');
+	// }
+
+	set xxx(val: any) {
+		console.log('%c [DIALOG] SET XXX', 'font-size: 24px; color: green;');
+		this.setAttribute('xxx', val);
+	}
+
+	// static get observedAttributes() {
+	// 	return ['xxx'];
+	// }
+
+	// attributeChangedCallback(name: string, oldValue: any, newValue: any) {
+	// 	console.log(
+	// 		'%c [DIALOG] attributeChangedCallback',
+	// 		'font-size: 24px; color: green;',
+	// 		name,
+	// 		oldValue,
+	// 		newValue
+	// 	);
+	// }
+
+	// adoptedCallback() {
+	// 	console.log('%c [DIALOG] adoptedCallback', 'font-size: 24px; color: green;');
+	// }
+
+	connectedCallback() {
+		// const shadowRoot = this.attachShadow({ mode: "open" });
+		// const template = document.createElement("div");
+		// template.innerHTML = `Overlay`;
+		// this.children.template.appendChild(this.firstElementChild);
+		// get template
+		// container.innerHTML = this.render();
+		const template = this.querySelector('template');
+		console.log('%c [DIALOG] template', 'font-size: 24px; color: green;', template);
+		console.log('%c [DIALOG] property', 'font-size: 24px; color: green;', this.xxx);
+
+		// shadowRoot.appendChild(container);
+		// this.body.appendChild(this);
+		document.body.appendChild(template.content);
+	}
+
+	// updated(changedProps: Map<string, any>) {
+	// 	console.log("updated", changedProps);
+	// 	if (changedProps.has("opened") && this.opened) {
+	// 		console.log("!!! show");
+
+	// 		let dialogOverlay = document.createElement("codegems-dialog-overlay");
+	// 		let content = this.shadowRoot.querySelector("slot");
+	// 		console.log("!!! content", content);
+	// 		dialogOverlay.appendChild(content);
+	// 		console.log("dialogOverlay", dialogOverlay);
+	// 		this.body.appendChild(dialogOverlay);
+	// 	}
+	// }
+}
+window.customElements.define('codegems-dialog', CodegemsDialogElement);

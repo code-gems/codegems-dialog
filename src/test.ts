@@ -1,4 +1,4 @@
-class CodegemsDialogElement extends HTMLElement {
+class MyCounter extends HTMLElement {
 	constructor() {
 		super();
 	}
@@ -9,14 +9,13 @@ class CodegemsDialogElement extends HTMLElement {
 	}
 
 	get xxx() {
-		console.log("%c [DIALOG] GET XXX", "font-size: 24px; color: green;");
 		return parseInt(this.getAttribute("xxx"));
 	}
 
 	set xxx(newValue) {
-		console.log("%c [DIALOG] SET XXX", "font-size: 24px; color: green;");
+		console.log("%c [TEST] SET VALUE", "font-size: 24px; color: green;");
 		this.setAttribute("xxx", newValue + "");
 	}
 }
 
-window.customElements.define("codegems-dialog", CodegemsDialogElement);
+window.customElements.define("my-counter", MyCounter);
